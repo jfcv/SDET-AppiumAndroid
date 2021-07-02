@@ -9,11 +9,8 @@ import java.net.URL;
 
 public class Base {
 
-    public static void main(String[] args) throws MalformedURLException {
-
-        final String deviceName = "phone10";
-
-        AndroidDriver<AndroidElement> driver;
+    public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
+        final String deviceName = "phone09";
 
         File dir = new File("app");
         File file = new File(dir, "ApiDemos-debug.apk");
@@ -23,6 +20,8 @@ public class Base {
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
         caps.setCapability(MobileCapabilityType.APP, file.getAbsolutePath());
 
-        driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+        AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+        return driver;
     }
+
 }
