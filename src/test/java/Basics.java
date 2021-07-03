@@ -13,6 +13,10 @@ public class Basics extends Base {
         /* xpath syntax
          * tagname[@attribute='value'] tagname : same as class on the appium inspector attributes
          */
+
         driver.findElementByXPath("//android.widget.TextView[@text='Preference']").click();
+        driver.findElementByXPath("//android.widget.TextView[@text='3. Preference dependencies']").click();
+        driver.findElementById("android:id/checkbox").click();
+        driver.findElementByXPath("(//android.widget.RelativeLayout)[2]").click();
     }
 }
