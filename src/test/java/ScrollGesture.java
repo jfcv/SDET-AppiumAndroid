@@ -5,7 +5,7 @@ import java.net.MalformedURLException;
 
 public class ScrollGesture extends Base {
     public static void main(String[] args) throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = Capabilities();
+        AndroidDriver<AndroidElement> driver = Capabilities(true);
 
         // scroll gesture
         driver.findElementByAndroidUIAutomator("text(\"Views\")").click();

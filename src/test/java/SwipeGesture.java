@@ -10,7 +10,7 @@ import static io.appium.java_client.touch.offset.ElementOption.element;
 
 public class SwipeGesture extends Base {
     public static void main(String[] args) throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = Capabilities();
+        AndroidDriver<AndroidElement> driver = Capabilities(true);
 
         // swipe gesture
         driver.findElementByAndroidUIAutomator("text(\"Views\")").click();

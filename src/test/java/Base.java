@@ -10,11 +10,21 @@ import java.util.concurrent.TimeUnit;
 
 public class Base {
 
-    public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
-        final String deviceName = "phone09";
+    public static AndroidDriver<AndroidElement> Capabilities(boolean realDevice) throws MalformedURLException {
+
+        String deviceName;
+        String appName;
+
+        if(realDevice) {
+            deviceName = "Android Device";
+            appName = "ApiDemos-debug-11.apk";
+        } else {
+            deviceName = "phone09";
+            appName = "ApiDemos-debug.apk";
+        }
 
         File dir = new File("app");
-        File file = new File(dir, "ApiDemos-debug.apk");
+        File file = new File(dir, appName);
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);

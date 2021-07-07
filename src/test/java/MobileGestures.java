@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 
 public class MobileGestures extends Base {
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
-        AndroidDriver<AndroidElement> driver = Capabilities();
+        AndroidDriver<AndroidElement> driver = Capabilities(true);
 
         driver.findElementByAndroidUIAutomator("text(\"Views\")").click();
 

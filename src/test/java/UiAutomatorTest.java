@@ -5,7 +5,7 @@ import java.net.MalformedURLException;
 
 public class UiAutomatorTest extends Base {
     public static void main(String[] args) throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = Capabilities();
+        AndroidDriver<AndroidElement> driver = Capabilities(true);
 
         /*
          * finding elements by Android UI Automator
