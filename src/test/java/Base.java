@@ -17,10 +17,10 @@ public class Base {
 
         if(realDevice) {
             deviceName = "Android Device";
-            appName = "ApiDemos-debug-11.apk";
+            appName = "General-Store.apk";
         } else {
             deviceName = "phone09";
-            appName = "ApiDemos-debug.apk";
+            appName = "General-Store.apk";
         }
 
         File dir = new File("app");
