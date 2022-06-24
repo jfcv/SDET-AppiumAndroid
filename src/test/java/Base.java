@@ -12,28 +12,24 @@ public class Base {
 
     public static AndroidDriver<AndroidElement> Capabilities(boolean realDevice) throws MalformedURLException {
 
-        String deviceName;
-        String appName;
-
-        if(realDevice) {
-            deviceName = "Android Device";
-            appName = "General-Store.apk";
-        } else {
-            deviceName = "phone09";
-            appName = "General-Store.apk";
-        }
-
-        File dir = new File("app");
-        File file = new File(dir, appName);
+        String deviceName = realDevice ? "Android Device" : "phone09";
+        String automationName = "uiautomator2";
+        String appName = "General-Store.apk";
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
-        caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-        caps.setCapability(MobileCapabilityType.APP, file.getAbsolutePath());
+        caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, automationName);
+        caps.setCapability(MobileCapabilityType.APP, getAbsolutePath(appName));
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
+    }
+
+    public static String getAbsolutePath(String appName) {
+        var dir = new File("app");
+        var file = new File(dir, appName);
+        return file.getAbsolutePath();
     }
 
 }

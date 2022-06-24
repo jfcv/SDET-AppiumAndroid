@@ -6,7 +6,7 @@ import java.net.MalformedURLException;
 
 public class Basics extends Base {
     public static void main(String[] args) throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = Capabilities(true);
+        var driver = Capabilities(true);
 
         /* xpath syntax
          * tagname[@attribute='value'] tagname : same as class on the appium inspector attributes

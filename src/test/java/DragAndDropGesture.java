@@ -10,7 +10,7 @@ import static io.appium.java_client.touch.offset.ElementOption.element;
 
 public class DragAndDropGesture extends Base {
     public static void main(String[] args) throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = Capabilities(true);
+        var driver = Capabilities(true);
 
         // drag and drop gesture
         driver.findElementByAndroidUIAutomator("text(\"Views\")").click();
